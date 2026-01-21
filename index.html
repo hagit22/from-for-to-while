@@ -547,7 +547,7 @@
 
         <!-- Slide 5: Emphasis 1 - GetDayName Method -->
         <div class="slide content-slide">
-            <h2>⭐ דגש ראשון: פעולת ()GetDayName</h2>
+            <h2>⭐ משוב 1: רצוי פעולת ()GetDayName</h2>
             
             <h3>למה לכתוב פעולה נפרדת לקבלת השם של היום?</h3>
 
@@ -592,7 +592,7 @@
 
         <!-- Slide 6: Emphasis 2 - Decimal Formatting -->
         <div class="slide content-slide">
-            <h2>⭐ דגש שני: הצגת מספרים עשרוניים</h2>
+            <h2>⭐ משוב 2: הצגת מספרים עשרוניים</h2>
             
             <h3>הבעיה: מספרים עשרוניים הם ארוכים</h3>
             
@@ -686,6 +686,7 @@ Console.WriteLine($<span class="code-string">"|{score,6}|"</span>); <span class=
     <span class="code-keyword">case</span> <span class="code-number">2</span>: dayName = <span class="code-string">"Monday"</span>;
             <span class="code-keyword">break</span>;
     <span class="code-comment">// ... rest of days</span>
+    <span class="code-comment">// ... </span>
     <span class="code-keyword">case</span> <span class="code-number">0</span>: dayName = <span class="code-string">"Saturday"</span>;
             <span class="code-keyword">break</span>;
     <span class="code-keyword">default</span>: dayName = <span class="code-string">"Illegal-day-name"</span>;
@@ -705,46 +706,129 @@ Console.WriteLine($<span class="code-string">"|{score,6}|"</span>); <span class=
             
             <div class="question">
                 איך נממש את זיהוי התקלה?<br>
-                (שינוי של 20+ מעלות בין ימים רצופים)
+                (שינוי של 20+ מעלות בין יומיים רצופים)
             </div>
 
             <button class="answer-btn" id="answer-btn2" onclick="showAnswer(2)">💡 הצג פתרון</button>
 
             <div class="answer-reveal" id="answer2">
-                <h3 style="margin-bottom: 15px;">✨ צריכים לזכור את הטמפרטורה הקודמת!</h3>
-                <div class="code-display" style="margin-top: 20px;"><span class="code-keyword">int</span> previousTemp = <span class="code-number">20</span>; <span class="code-comment">// starting temperature</span>
-<span class="code-keyword">int</span> currentTemp;
-<span class="code-keyword">bool</span> takala = <span class="code-keyword">false</span>;
-
-<span class="code-comment">// Inside loop:</span>
-currentTemp = rand.Next(-<span class="code-number">10</span>, <span class="code-number">36</span>);
-<span class="code-keyword">int</span> tempDifference = Math.Abs(currentTemp - previousTemp);
-
-<span class="code-keyword">if</span> (tempDifference >= <span class="code-number">20</span>)
-{
-    takala = <span class="code-keyword">true</span>;
-}
-
-previousTemp = currentTemp; <span class="code-comment">// update for next iteration</span></div>
-                <p style="margin-top: 15px; font-size: 1.1rem;">
-                    💡 <strong>Math.Abs()</strong> מחזיר ערך מוחלט (תמיד חיובי)<br>
-                    מאפשר לנו לבדוק שינוי בשני הכיוונים (עלייה או ירידה)
+                <h3 style="margin-bottom: 20px;">🎯 הפתרון מסתתר בשיעור!</h3>
+                <p style="font-size: 1.3rem; line-height: 1.8; margin-bottom: 25px;">
+                    כדי לפתור את האתגר הזה, נלמד שני דברים:
+                </p>
+                
+                <div style="background: rgba(255,255,255,0.2); padding: 20px; border-radius: 10px; margin: 20px 0;">
+                    <p style="font-size: 1.2rem; line-height: 2;">
+                        <strong>1️⃣ גישות שונות</strong> לבניית קוד עם while<br>
+                        <strong>2️⃣ דוגמאות טיפוסיות</strong> לשימוש ב-while
+                    </p>
+                </div>
+                
+                <p style="font-size: 1.2rem; margin-top: 25px;">
+                    💡 <strong>שימו לב - בסוף השיעור יהיו בידיכם את הכלים לפתרון התרגיל!</strong>
                 </p>
             </div>
         </div>
 
-        <!-- Slide 10: Introducing While Loops -->
+        <!-- Slide 10: Simple While Introduction -->
         <div class="slide content-slide">
-            <h2>🎯 הפתרון: לולאת While</h2>
+            <h2>🔄 הכירו: לולאת While</h2>
             
-            <h3 style="margin-top: 30px;">המבנה הבסיסי של לולאת while:</h3>
+            <h3 style="margin-top: 25px;">אותה משימה - שתי דרכים:</h3>
+            <p style="font-size: 1.2rem; margin-bottom: 25px;">הדפסת המספרים מ-0 עד 5</p>
             
-            <div class="code-display"><span class="code-keyword">while</span> (condition)
+            <div class="grid-container grid-2">
+                <div class="focus-item" style="background: linear-gradient(135deg, #f97316, #ea580c); color: white;">
+                    <h3 style="margin-bottom: 15px;">לולאת While</h3>
+                    <div class="code-display" style="font-size: 1rem;"><span class="code-keyword">int</span> i = <span class="code-number">0</span>;
+<span class="code-keyword">while</span> (i &lt;= <span class="code-number">5</span>)
 {
-    <span class="code-comment">// code to repeat</span>
-    <span class="code-comment">// as long as condition is true</span>
+    Console.WriteLine(i);
+    i++;
 }</div>
+                    <div style="background: rgba(255,255,255,0.15); padding: 15px; border-radius: 10px; margin-top: 15px; font-size: 1rem; line-height: 1.8;">
+                        • <strong>אתחול:</strong> מגדירים לפני הלולאה<br>
+                        • <strong>תנאי:</strong> בכותרת הלולאה<br>
+                        • <strong>הגדלה:</strong> בתוך גוף הלולאה
+                    </div>
+                </div>
 
+                <div class="focus-item" style="background: linear-gradient(135deg, #6366f1, #4338ca); color: white;">
+                    <h3 style="margin-bottom: 15px;">לולאת For</h3>
+                    <div class="code-display" style="font-size: 1rem;"><span class="code-keyword">for</span> (<span class="code-keyword">int</span> i = <span class="code-number">0</span>; i &lt;= <span class="code-number">5</span>; i++)
+{
+    Console.WriteLine(i);
+}</div>
+                    <div style="background: rgba(255,255,255,0.15); padding: 15px; border-radius: 10px; margin-top: 15px; font-size: 1rem; line-height: 1.8;">
+                        • <strong>אתחול:</strong> בכותרת הלולאה<br>
+                        • <strong>תנאי:</strong> בכותרת הלולאה<br>
+                        • <strong>הגדלה:</strong> בכותרת הלולאה
+                    </div>
+                </div>
+            </div>
+
+            <div class="emphasis-box" style="margin-top: 30px;">
+                <h4 style="margin-bottom: 15px;">💡 המשותף והשונה:</h4>
+                <p style="font-size: 1.2rem; line-height: 1.8;">
+                    <strong>שתיהן זהות בתפקוד!</strong> יש אינדקס, אתחול, תנאי והגדלה.<br>
+                    <strong>ההבדל:</strong> ב-for הכל במקום אחד, ב-while צריך להגדיר ידנית.
+                </p>
+            </div>
+        </div>
+
+        <!-- Slide 11: For vs While - When to Use -->
+        <div class="slide content-slide">
+            <h2>🤔 מתי להשתמש ב-For ומתי ב-While?</h2>
+            
+            <div class="grid-container grid-2" style="margin-top: 30px;">
+                <div class="focus-item" style="background: linear-gradient(135deg, #6366f1, #4338ca); color: white;">
+                    <h3 style="margin-bottom: 15px;">🔢 לולאת For</h3>
+                    <h4 style="margin: 20px 0 15px 0;">כשיודעים מראש כמה פעמים לרוץ</h4>
+                    <div style="background: rgba(255,255,255,0.2); padding: 15px; border-radius: 10px;">
+                        <strong>דוגמאות:</strong>
+                        <ul style="margin: 10px 0 0 20px; line-height: 1.8; font-size: 1.1rem;">
+                            <li>7 ימים בשבוע</li>
+                            <li>12 חודשים בשנה</li>
+                            <li>10 תלמידים בכיתה</li>
+                            <li>100 איטרציות של חישוב</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="focus-item" style="background: linear-gradient(135deg, #f97316, #ea580c); color: white;">
+                    <h3 style="margin-bottom: 15px;">🔄 לולאת While</h3>
+                    <h4 style="margin: 20px 0 15px 0;">כשלא יודעים מראש כמה פעמים</h4>
+                    <div style="background: rgba(255,255,255,0.2); padding: 15px; border-radius: 10px;">
+                        <strong>דוגמאות:</strong>
+                        <ul style="margin: 10px 0 0 20px; line-height: 1.8; font-size: 1.1rem;">
+                            <li>עד שמשתמש מזין 0</li>
+                            <li>עד שסכום מגיע ל-100</li>
+                            <li>עד שמוצאים ערך מסוים</li>
+                            <li>עד שמזג אוויר משתנה</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="emphasis-box" style="margin-top: 30px;">
+                <h4 style="margin-bottom: 15px;">🎯 הכלל המנחה:</h4>
+                <p style="font-size: 1.3rem; line-height: 1.8;">
+                    יודעים כמה פעמים? → <strong>For</strong><br>
+                    לא יודעים כמה פעמים? → <strong>While</strong>
+                </p>
+            </div>
+
+            <div class="info-box" style="margin-top: 25px;">
+                <p style="font-size: 1.1rem; line-height: 1.8;">
+                    💡 <strong>טיפ:</strong> אם התנאי תלוי בקלט מהמשתמש או בחישוב שמשתנה - בדרך כלל While!
+                </p>
+            </div>
+        </div>
+
+<!-- Slide: While Loop Structure and How It Works -->
+        <div class="slide content-slide">
+            <h2>🎯 לולאת While - המבנה והלוגיקה</h2>
+            
             <div class="grid-container grid-2" style="margin-top: 30px;">
                 <div class="info-box">
                     <h4>🔄 איך זה עובד?</h4>
@@ -757,67 +841,323 @@ previousTemp = currentTemp; <span class="code-comment">// update for next iterat
                 </div>
 
                 <div class="success-box">
-                    <h4>דוגמא:</h4>
-                    <div class="code-display" style="margin-top: 15px;">sum = <span class="code-number">0</span>;
+                    <h4>המבנה הבסיסי:</h4>
+                                <div class="code-display"><span class="code-keyword">while</span> (condition)
+{
+    <span class="code-comment">// code to repeat</span>
+    <span class="code-comment">// as long as condition is true</span>
+}
+<span class="code-comment">// continue program after the loop</span></div>
+                </div>
+            </div>
+
+            <div class="warning-box" style="margin-top: 30px;">
+                <h4 style="margin-bottom: 15px;">⚠️ חובה: לעדכן משתנים שמשפיעים על התנאי!</h4>
+                <p style="font-size: 1.2rem; line-height: 1.8;">
+                    אחרת יתכן שהלולאה אף פעם לא תעצר → לולאה אינסופית! 🔄
+                </p>
+            </div>
+
+            <div class="info-box" style="margin-top: 25px;">
+                <h4 style="margin-bottom: 10px;">💡 זכרו:</h4>
+                <ul style="margin: 10px 0 0 25px; font-size: 1.1rem; line-height: 1.8;">
+                    <li>לפני הלולאה: <strong>אתחול</strong> של משתנים שישפיעו על התנאי</li>
+                    <li>בתוך הלולאה: <strong>עדכון</strong> של אותם משתנים</li>
+                    <li>אחרת: הלולאה לא תתנהג כמו שציפיתם!</li>
+                </ul>
+            </div>
+        </div>
+        </        
+
+        <!-- Slide: Example 1 - Sum Until 100 -->
+        <div class="slide content-slide">
+            <h2>דוגמה 1: סכום מספרים עד 100</h2>
+            
+            <h3 style="margin-top: 25px;">המשימה: להמשיך לקלוט מספרים ולחבר אותם עד שהסכום עובר 100</h3>
+            
+            <div class="code-display" style="margin: 30px 0;"><span class="code-keyword">int</span> sum = <span class="code-number">0</span>;
+
 <span class="code-keyword">while</span> (sum &lt;= <span class="code-number">100</span>)
 {
-    Console.Write(<span class="code-string">"Enter a new number: "</span>);
+    Console.Write(<span class="code-string">"Enter a number: "</span>);
+    <span class="code-keyword">int</span> number = <span class="code-keyword">int</span>.Parse(Console.ReadLine());
+    sum = sum + number;
+}
+
+Console.WriteLine($<span class="code-string">"Final sum: {sum}"</span>);</div>
+
+            <div style="margin-top: 30px; font-size: 1.2rem; line-height: 2;">
+                <p><strong>💡 שימו לב:</strong></p>
+                <ul style="margin: 15px 0 0 40px;">
+                    <li>מאתחלים <code style="background: #f3f4f6; padding: 2px 8px; border-radius: 4px;">sum = 0</code> לפני הלולאה</li>
+                    <li>התנאי בודק את הערך של <code style="background: #f3f4f6; padding: 2px 8px; border-radius: 4px;">sum</code></li>
+                    <li>קוראים את המספר בתוך הלולאה</li>
+                    <li>מוסיפים לסכום</li>
+                </ul>
+            </div>
+
+            <div style="background: #d1fae5; border-right: 5px solid #10b981; padding: 20px; margin-top: 30px; border-radius: 8px;">
+                <p style="font-size: 1.2rem; color: #065f46;">
+                    ✅ זוכרים לתת ערך התחלתי 0.
+                </p>
+            </div>
+        </div>
+
+        <!-- Slide: Example 2A - Number >= 0 -->
+        <div class="slide content-slide">
+            <h2>דוגמה 2: סכום מספרים עד מספר שלילי</h2>
+            
+            <h3 style="margin-top: 10px;">משימה חדשה: להמשיך לקלוט ולחבר עד שהמשתמש מזין מספר שלילי</h3>
+            
+            <div style="margin-top: 5px; font-size: 1.2rem; line-height: 1;">
+                <p><strong>🤔 מה השתנה? </strong>עכשיו התנאי תלוי ב-<code style="background: #f3f4f6; padding: 2px 8px; border-radius: 4px;">number</code> (הקלט עצמו)</p>
+            </div>
+            <div class="code-display" style="margin: 10px 0;"><span class="code-keyword">int</span> sum = <span class="code-number">0</span>;
+<span class="code-keyword">int</span> number = <span class="code-number">0</span>;
+
+<span class="code-keyword">while</span> (number &gt;= <span class="code-number">0</span>)
+{
+    Console.Write(<span class="code-string">"Enter a number: "</span>);
+    number = <span class="code-keyword">int</span>.Parse(Console.ReadLine());
+    sum = sum + number;
+}
+
+Console.WriteLine($<span class="code-string">"Final sum: {sum}"</span>);</div>
+
+            <div style="background: #fee2e2; border-right: 5px solid #ef4444; padding: 20px; margin-top: 5px; border-radius: 8px;">
+                <p style="font-size: 1.2rem; color: #991b1b; line-height: 1.8;">
+                    ⚠️ <strong> אבל רגע, יש כאן בעיה!</strong><br>
+                    אנחנו מוסיפים גם מספר שלילי לסכום, לפני שהלולאה נעצרת!
+                </p>
+            </div>
+
+            <div style="background: #fef3c7; border-right: 5px solid #f59e0b; padding: 20px; margin-top: 20px; border-radius: 8px;">
+                <p style="font-size: 1.1rem; color: #92400e;">
+                    💭 <strong>שימו לב:</strong> חייבים להכניס כאן תנאי..
+                </p>
+            </div>
+        </div>
+
+        <!-- Slide: Example 2B - Number >= 0 -->
+        <div class="slide content-slide">
+            <h2>המשך דוגמה 2: סכום מספרים עד מספר שלילי</h2>
+            
+            <h3 style="margin-top: 25px;">ננסה שוב: צריך להמשיך לקלוט ולחבר עד שהמשתמש מזין מספר שלילי</h3>
+            
+            <div class="code-display" style="margin: 30px 0;"><span class="code-keyword">int</span> sum = <span class="code-number">0</span>;
+<span class="code-keyword">int</span> number = <span class="code-number">0</span>;
+
+<span class="code-keyword">while</span> (number &gt;= <span class="code-number">0</span>)
+{
+    Console.Write(<span class="code-string">"Enter a number: "</span>);
+    number = <span class="code-keyword">int</span>.Parse(Console.ReadLine());
+    
+    <span class="code-keyword">if</span> (number &gt;= <span class="code-number">0</span>)
+    {
+        sum = sum + number;
+    }
+}
+
+Console.WriteLine($<span class="code-string">"Final sum: {sum}"</span>);</div>
+
+            <div style="margin-top: 30px; font-size: 1.2rem; line-height: 2;">
+                <ul style="margin: 15px 0 0 40px;">
+                    <li> התנאי תלוי ב-<code style="background: #f3f4f6; padding: 2px 8px; border-radius: 4px;">number</code> (הקלט עצמו)</li>
+                    <li>צריך לאתחל <code style="background: #f3f4f6; padding: 2px 8px; border-radius: 4px;">number = 0</code> כדי להיכנס ללולאה</li>
+                    <li><strong>אבל!</strong> צריך לבדוק שוב בתוך הלולאה עם <code style="background: #f3f4f6; padding: 2px 8px; border-radius: 4px;">if</code></li>
+                </ul>
+            </div>
+
+            <div style="background: #fee2e2; border-right: 5px solid #ef4444; padding: 20px; margin-top: 30px; border-radius: 8px;">
+                <p style="font-size: 1.2rem; color: #991b1b; line-height: 1.8;">
+                    ⚠️ אנחנו בודקים את אותו תנאי פעמיים - ב-while וב-if.  <strong>זו לא כתיבה יפה.!</strong>
+                </p>
+            </div>
+        </div>
+
+        <!-- Slide: Example 3 - Number > 0 -->
+        <div class="slide content-slide">
+            <h2>דוגמה 3: רק מספרים חיוביים</h2>
+            
+            <h3 style="margin-top: 25px;">משימה: לקלוט ולחבר רק מספרים חיוביים (גדולים מ-0)</h3>
+            
+            <div class="code-display" style="margin: 30px 0;"><span class="code-keyword">int</span> sum = <span class="code-number">0</span>;
+<span class="code-keyword">int</span> number = <span class="code-number">____</span>;  <span class="code-comment">// ??? with zero - loop never starts </span>
+
+<span class="code-keyword">while</span> (number &gt; <span class="code-number">0</span>)
+{
+    Console.Write(<span class="code-string">"Enter a positive number (0 or negative to stop): "</span>);
+    number = <span class="code-keyword">int</span>.Parse(Console.ReadLine());
+    
+    <span class="code-keyword">if</span> (number &gt; <span class="code-number">0</span>)
+    {
+        sum = sum + number;
+    }
+}
+
+Console.WriteLine($<span class="code-string">"Final sum: {sum}"</span>);</div>
+
+            <div style="margin-top: 30px; font-size: 1.2rem; line-height: 2;">
+                <p><strong>🤔 עכשיו יש לנו שתי בעיות:</strong></p>
+                <ol style="margin: 15px 0 0 40px; line-height: 2.2;">
+                    <li><strong>ערך התחלה שרירותי:</strong> איזה ערך הגיוני לתת?</li>
+                    <li><strong>בדיקה כפולה:</strong> אותו תנאי ב-while וב-if</li>
+                </ol>
+            </div>
+
+            <div style="background: #fee2e2; border-right: 5px solid #ef4444; padding: 20px; margin-top: 30px; border-radius: 8px;">
+                <p style="font-size: 1.2rem; color: #991b1b; line-height: 1.8;">
+                    ❌ <strong>למה כל ערך התחלתי יעבוד?</strong><br>
+                    כי הוא מאפשר להיכנס ללולאה, ומיד מוחלף בקריאה הראשונה.<br>
+                    אבל מי שקורא את הקוד יתפלא: "מה המשמעות של הערך הזה שכתוב פה?"
+                </p>
+            </div>
+
+            <div style="background: #dbeafe; border-right: 5px solid #3b82f6; padding: 20px; margin-top: 20px; border-radius: 8px;">
+                <p style="font-size: 1.2rem; color: #1e40af;">
+                    💡 <strong>האם יש דרך יותר טובה?</strong>
+                </p>
+            </div>
+        </div>
+
+        <!-- Slide: The Solution - Read Before Loop -->
+        <div class="slide content-slide">
+            <h2>💡 פתרון: קריאת הקלט לפני הלולאה</h2>
+            
+            <h3 style="margin-top: 25px;">אותה בעיה - גישה אחרת:</h3>
+            
+            <div class="code-display" style="margin: 30px 0;"><span class="code-keyword">int</span> sum = <span class="code-number">0</span>;
+
+Console.Write(<span class="code-string">"Enter a positive number (0 or negative to stop): "</span>);
+<span class="code-keyword">int</span> number = <span class="code-keyword">int</span>.Parse(Console.ReadLine());
+
+<span class="code-keyword">while</span> (number &gt; <span class="code-number">0</span>)
+{
+    sum = sum + number;
+    
+    Console.Write(<span class="code-string">"Enter a positive number (0 or negative to stop): "</span>);
+    number = <span class="code-keyword">int</span>.Parse(Console.ReadLine());
+}
+
+Console.WriteLine($<span class="code-string">"Final sum: {sum}"</span>);</div>
+
+            <div style="margin-top: 30px; font-size: 1.2rem; line-height: 2;">
+                <p><strong>✨ מה השתנה?</strong></p>
+                <ul style="margin: 15px 0 0 40px; line-height: 2.2;">
+                    <li>קוראים את המספר הראשון <strong>לפני</strong> הלולאה</li>
+                    <li>בודקים את התנאי - אם חיובי, נכנסים ללולאה</li>
+                    <li>מוסיפים לסכום (בטוח שהוא חיובי!)</li>
+                    <li>קוראים מספר חדש <strong>בסוף</strong> הלולאה</li>
+                </ul>
+            </div>
+
+            <div style="background: #d1fae5; border-right: 5px solid #10b981; padding: 20px; margin-top: 30px; border-radius: 8px;">
+                <p style="font-size: 1.2rem; color: #065f46; line-height: 1.8;">
+                    ✅ <strong>היתרונות:</strong><br>
+                    • אין ערך התחלה מוזר!<br>
+                    • אין בדיקת if כפולה!<br>
+                    • הלולאה מעבדת רק ערכים תקינים
+                </p>
+            </div>
+
+            <div style="background: #fef3c7; border-right: 5px solid #f59e0b; padding: 20px; margin-top: 20px; border-radius: 8px;">
+                <p style="font-size: 1.2rem; color: #92400e; line-height: 1.8;">
+                    ⚠️ <strong>החסרונות:</strong><br>
+                    • קריאת הקלט מופיעה פעמיים - לפני הלולאה ובסופה (כפילות קוד)<br>
+                    • סדר הפעולות בלולאה עשוי לבלבל
+                </p>
+            </div>
+        </div>
+
+
+
+        <!-- Slide: Approach 1 - Initialize-Read-Process -->
+        <div class="slide content-slide">
+            <h2>🎯 לסיכום: גושה 1 - אתחול-קריאה-עיבוד</h2>
+            
+            <h3 style="margin-top: 25px;">דרך פשוטה ונקייה לבניית לולאת while עם קלט:</h3>
+            
+            <div class="emphasis-box" style="margin: 25px 0;">
+                <h4 style="margin-bottom: 15px;">דוגמה: קליטת מספרים עד שהסכום עובר את 100</h4>
+                <div class="code-display">sum = <span class="code-number">0</span>;  <span class="code-comment">// initial value lets us enter the loop</span>
+<span class="code-keyword">while</span> (sum &lt;= <span class="code-number">100</span>)
+{
+    Console.Write(<span class="code-string">"Enter a number: "</span>);
     number = <span class="code-keyword">int</span>.Parse(Console.ReadLine());
     sum = sum + number;
 }</div>
-                    <p style="margin-top: 10px; font-size: 1rem;">
-                        הלולאה תמשיך עד שהסכום יעבור את 100!
-                    </p>
+            </div>
+
+            <div class="grid-container grid-2" style="margin-top: 30px;">
+                <div class="clickable-item" id="approach1-flow" onclick="revealItem('approach1-flow')">
+                    <div class="info-box">
+                    <h4>🔄 איך זה עובד?</h4>
+                    <ol style="margin: 15px 0 0 25px; font-size: 1.1rem; line-height: 2;">
+                        <li>בודקים את התנאי</li>
+                        <li>אם <strong>true</strong> - מריצים את הקוד בגוף הלולאה</li>
+                        <li>חוזרים לשלב 1</li>
+                        <li>אם <strong>false</strong> - יוצאים מהלולאה</li>
+                    </ol>
+                    </div>
                 </div>
+
+                <div class="clickable-item" id="approach1-pros" onclick="revealItem('approach1-pros')">
+                    <div class="success-box">
+                        <h4>✅ יתרונות</h4>
+                        <ul style="margin: 15px 0 0 25px; font-size: 1.1rem; line-height: 2;">
+                            <li><strong>אין כפילות קוד</strong> - קריאת הקלט מופיעה רק פעם אחת</li>
+                            <li><strong>זרימה טבעית</strong> - קוראים ומעבדים ברצף</li>
+                            <li><strong>קל לקריאה</strong> - הכל בתוך הלולאה</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="focus-item" style="margin-top: 30px; background: linear-gradient(135deg, #10b981, #059669); color: white; font-size: 1.2rem; text-align: center;">
+                💡 <strong>זו הדרך הפשוטה ביותר - כשיש ערך התחלתי טוב!</strong>
             </div>
         </div>
 
-        <!-- Slide 11: For vs While - When to Use -->
+        <!-- Slide: Approach 2 - Read-Process-Read -->
         <div class="slide content-slide">
-            <h2>🤔 מתי להשתמש ב-For ומתי ב-While?</h2>
+            <h2>🎯 לסיכום: גישה 2 - קריאה-עיבוד-קריאה</h2>
             
-            <div class="grid-container grid-2">
-                <div class="clickable-item" id="for-when" onclick="revealItem('for-when')">
-                    <div class="focus-item" style="background: linear-gradient(135deg, #6366f1, #4338ca); color: white;">
-                        <h3>🔢 לולאת For</h3>
-                        <p style="font-size: 1.2rem; margin: 15px 0;">
-                            <strong>כשיודעים מראש</strong> כמה פעמים לרוץ
-                        </p>
-                        <div style="background: rgba(255,255,255,0.2); padding: 15px; border-radius: 10px; margin-top: 15px;">
-                            <strong>דוגמאות:</strong>
-                            <ul style="margin: 10px 0 0 20px; line-height: 1.8;">
-                                <li>7 ימים בשבוע</li>
-                                <li>12 חודשים בשנה</li>
-                                <li>10 סטודנטים בכיתה</li>
-                                <li>100 איטרציות של חישוב</li>
-                            </ul>
-                        </div>
-                    </div>
+            <h3 style="margin-top: 25px;">כשאין ערך התחלתי טוב - קוראים לפני הלולאה!</h3>
+            
+            <div class="grid-container grid-2" style="margin-top: 30px;">
+                <div class="emphasis-box">
+                    <h4 style="margin-bottom: 15px;">אותה בעיה - פתרון אחר:</h4>
+                    <div class="code-display">Console.Write(<span class="code-string">"Enter a positive number: "</span>);
+number = <span class="code-keyword">int</span>.Parse(Console.ReadLine());
+
+<span class="code-keyword">while</span> (number &lt;= <span class="code-number">0</span>)
+{
+    Console.Write(<span class="code-string">"Invalid! Enter a positive number: "</span>);
+    number = <span class="code-keyword">int</span>.Parse(Console.ReadLine());
+}</div>
                 </div>
 
-                <div class="clickable-item" id="while-when" onclick="revealItem('while-when')">
-                    <div class="focus-item" style="background: linear-gradient(135deg, #f97316, #ea580c); color: white;">
-                        <h3>🔄 לולאת While</h3>
-                        <p style="font-size: 1.2rem; margin: 15px 0;">
-                            <strong>כשלא יודעים</strong> כמה פעמים לרוץ
-                        </p>
-                        <div style="background: rgba(255,255,255,0.2); padding: 15px; border-radius: 10px; margin-top: 15px;">
-                            <strong>דוגמאות:</strong>
-                            <ul style="margin: 10px 0 0 20px; line-height: 1.8;">
-                                <li>עד שהמשתמש יזין קלט תקין</li>
-                                <li>עד שנמצא תוצאה</li>
-                                <li>עד שיקרה אירוע מסוים</li>
-                                <li>עד שהתנאי מתקיים</li>
-                            </ul>
-                        </div>
-                    </div>
+                <div class="info-box">
+                    <h4>🔄 איך זה עובד?</h4>
+                    <ol style="margin: 15px 0 0 25px; font-size: 1.1rem; line-height: 2;">
+                        <li><strong>קוראים קלט ראשון</strong> לפני הלולאה</li>
+                        <li>בודקים תנאי - תקין? יוצאים!</li>
+                        <li>לא תקין? נכנסים ללולאה</li>
+                        <li>מציגים הודעת שגיאה</li>
+                        <li><strong>קוראים קלט שוב</strong> בסוף הלולאה</li>
+                        <li>חוזרים לבדוק תנאי</li>
+                    </ol>
                 </div>
             </div>
 
-            <div class="emphasis-box" style="margin-top: 30px;">
-                💡 <strong>כלל אצבע:</strong> אם אפשר לספור מראש - השתמשו ב-<strong>for</strong>. אחרת בחרו ב - <strong>while</strong>!
+            <div class="success-box" style="margin-top: 30px;">
+                <p style="font-size: 1.1rem; line-height: 1.8; margin-top: 10px;">
+                    • הלולאה מעבדת רק ערכים לא-תקינים<br>
+                    • ברור מה קורה בכל שלב<br>
+                    • אין ערכי "דמה" מבלבלים
+                </p>
             </div>
-        </div>
+        </div>        
 
         <!-- Slide 12: While Loop Structure Explained -->
         <div class="slide content-slide">
@@ -896,7 +1236,7 @@ previousTemp = currentTemp; <span class="code-comment">// update for next iterat
             </div>
 
             <div class="success-box" style="margin-top: 25px;">
-                <h4>✅ זה תקין!</h4>
+                <h4>✅ לעיתים זה תקין!</h4>
                 <p style="font-size: 1.1rem; line-height: 1.8;">
                     לולאת while בודקת את התנאי <strong>לפני</strong> כל איטרציה, כולל הראשונה.<br>
                     אם התנאי false מההתחלה - פשוט לא נכנסים ללולאה.
@@ -942,7 +1282,7 @@ previousTemp = currentTemp; <span class="code-comment">// update for next iterat
 
         <!-- Slide 15: Pattern 1 - Input Validation (Problem) -->
         <div class="slide content-slide">
-            <h2>🎯 תבנית 1: בדיקת קלט (Input Validation)</h2>
+            <h2>🎯 תרחיש 1: בדיקת קלט (Input Validation)</h2>
             
             <div class="emphasis-box">
                 <h3 style="margin-bottom: 10px;">🎭 התרחיש:</h3>
@@ -991,7 +1331,7 @@ previousTemp = currentTemp; <span class="code-comment">// update for next iterat
 
         <!-- Slide 16: Pattern 1 - Input Validation (Solution) -->
         <div class="slide content-slide">
-            <h2>✨ תבנית 1: הפתרון - לולאת בדיקת קלט</h2>
+            <h2>✨ תרחיש 1: הפתרון - לולאת בדיקת קלט</h2>
             
             <div class="code-display"><span class="code-keyword">int</span> age;
 
@@ -1020,7 +1360,7 @@ Valid age received: 25</div>
 
         <!-- Slide 17: Pattern 1 - Input Validation (Explanation) -->
         <div class="slide content-slide">
-            <h2>🔍 תבנית 1: מרכיבי התבנית</h2>
+            <h2>🔍 תרחיש 1: מרכיבי התבנית</h2>
             
             <div class="grid-container grid-3">
                 <div class="clickable-item" id="key1" onclick="revealItem('key1')">
@@ -1078,7 +1418,7 @@ Valid age received: 25</div>
 
         <!-- Slide 18: Pattern 2 - Sentinel Value (Problem) -->
         <div class="slide content-slide">
-            <h2>🎯 תבנית 2: זקיף (Sentinel Value)</h2>
+            <h2>🎯 תרחיש 2: זקיף (Sentinel Value)</h2>
             
             <div class="emphasis-box">
                 <h3 style="margin-bottom: 10px;">🎭 התרחיש:</h3>
@@ -1125,7 +1465,7 @@ Total sum: 42</div>
 
         <!-- Slide 19: Pattern 2 - Sentinel Value (Solution) -->
         <div class="slide content-slide">
-            <h2>✨ תבנית 2: הפתרון - לולאת זקיף</h2>
+            <h2>✨ תרחיש 2: הפתרון - לולאת זקיף</h2>
             
             <div class="code-display"><span class="code-keyword">int</span> number;
 <span class="code-keyword">int</span> sum = <span class="code-number">0</span>;
@@ -1156,7 +1496,7 @@ Total sum: 50</div>
 
         <!-- Slide 20: Pattern 2 - Sentinel Value (Explanation) -->
         <div class="slide content-slide">
-            <h2>🔍 תבנית 2: מרכיבי התבנית</h2>
+            <h2>🔍 תרחיש 2: מרכיבי התבנית</h2>
             
             <div class="grid-container grid-3">
                 <div class="clickable-item" id="sent1" onclick="revealItem('sent1')">
@@ -1215,7 +1555,7 @@ Total sum: 50</div>
 
         <!-- Slide 21: Pattern 3 - Flag-Controlled (Problem) -->
         <div class="slide content-slide">
-            <h2>🎯 תבנית 3: חיפוש עם דגל (Flag-Controlled)</h2>
+            <h2>🎯 תרחיש 3: חיפוש עם דגל (Flag-Controlled)</h2>
             
             <div class="emphasis-box">
                 <h3 style="margin-bottom: 10px;">🎭 התרחיש:</h3>
@@ -1261,7 +1601,7 @@ No negative temp in 30 days.</div>
 
         <!-- Slide 22: Pattern 3 - Flag-Controlled (Solution) -->
         <div class="slide content-slide">
-            <h2>✨ תבנית 3: הפתרון - לולאת חיפוש</h2>
+            <h2>✨ תרחיש 3: הפתרון - לולאת חיפוש</h2>
             
             <div class="code-display">Random rand = <span class="code-keyword">new</span> Random();
 <span class="code-keyword">int</span> day = <span class="code-number">1</span>;
@@ -1293,7 +1633,7 @@ No negative temp in 30 days.</div>
 
         <!-- Slide 23: Pattern 3 - Flag-Controlled (Explanation) -->
         <div class="slide content-slide">
-            <h2>🔍 תבנית 3: מרכיבי התבנית</h2>
+            <h2>🔍 תרחיש 3: מרכיבי התבנית</h2>
             
             <div class="grid-container grid-2" style="margin-bottom: 25px;">
                 <div class="clickable-item" id="flag1" onclick="revealItem('flag1')">
